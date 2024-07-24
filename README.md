@@ -9,3 +9,6 @@ Se agrego una funcion con JavaScript para el que hace que al darle click a un bo
 22/7/2024
 
 agregue una funcion que permite al ususario agregar una imagen en su perfil una vez haya inciado sesion, ademas agregue la opcion para ingresar a los formularios, en este caso el formulario de compras e historial.
+
+24/7/2024
+Se inicio con el diseño de los formularios, empezando con el que gestionara los usuarios.
