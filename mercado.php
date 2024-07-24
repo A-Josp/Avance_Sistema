@@ -18,13 +18,16 @@ if(!isset($_SESSION['users'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercado</title>
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon-new.ico" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-image: url('assets/images/vs.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
         }
         header {
             background-color: #333;
