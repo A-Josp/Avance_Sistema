@@ -10,42 +10,8 @@ if(!isset($_SESSION['users'])){
     session_destroy();
     die();  
 }
-
-include('config.php');
-
-// Crear usuario
-if(isset($_POST['create_user'])) {
-    $nombre = $_POST['nombre'];
-    $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-
-    $query = "INSERT INTO usuarios (nombre, email, password) VALUES ('$nombre', '$email', '$password')";
-    $conn->query($query);
-}
-
-// Actualizar usuario
-if(isset($_POST['update_user'])) {
-    $id = $_POST['id'];
-    $nombre = $_POST['nombre'];
-    $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-
-    $query = "UPDATE usuarios SET nombre='$nombre', email='$email', password='$password' WHERE id=$id";
-    $conn->query($query);
-}
-
-// Eliminar usuario
-if(isset($_GET['delete_user'])) {
-    $id = $_GET['delete_user'];
-    $query = "DELETE FROM usuarios WHERE id=$id";
-    $conn->query($query);
-}
-
-// Obtener todos los usuarios
-$query = "SELECT * FROM usuarios";
-$result = $conn->query($query);
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
