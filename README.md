@@ -18,4 +18,6 @@ Se inicio con el diseño de los formularios, empezando con el que gestionara los
 
 Hize un nuevo diseño para el menu, agregando barras transparentes en la pagina y diferentes colores, mas funciones de la pagina y cuadros de texto que llevaran informacion sobre la "empresa"
 
+29/7/2024
 
+Se edito el diseño del menu creando una algo mas simple y funcional para el usuario, ademas de seguir con el formulario de usuarios en este caso el agregar un nueo usuario.
