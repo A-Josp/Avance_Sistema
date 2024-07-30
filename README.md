@@ -21,3 +21,7 @@ Hize un nuevo diseño para el menu, agregando barras transparentes en la pagina 
 29/7/2024
 
 Se edito el diseño del menu creando una algo mas simple y funcional para el usuario, ademas de seguir con el formulario de usuarios en este caso el agregar un nueo usuario.
+
+30/7/2024
+
+Se finalizo el primer formulario en este caso para editar, actualizar, agregar y eliminar usuarios. dejamos a medias el tema del diseño
