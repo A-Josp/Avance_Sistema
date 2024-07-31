@@ -88,7 +88,7 @@ if(!isset($_SESSION['users'])){
         <a href="menu.php" class="back-button">Regresar al Menú</a>
     </header>
     <main>
-        <form action="procesar_compra.php" method="post">
+        <form action="compra.php" method="post">
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre" id="nombre" required>
             
