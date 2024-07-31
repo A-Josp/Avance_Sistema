@@ -29,3 +29,7 @@ Se finalizo el primer formulario en este caso para editar, actualizar, agregar y
 30/7/2024 //Noche
 
 Empezamos con un nuevo formulario en este caso el de compra y venta de los boletos, iniciamos con un diseño simple.
+
+31/7/2024
+
+Finalizamos el formulario de compra de boletos, creamos una nueva tabla en la base de datos donde se almacenara la informacion.
