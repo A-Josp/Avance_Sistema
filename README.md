@@ -25,3 +25,7 @@ Se edito el diseño del menu creando una algo mas simple y funcional para el usu
 30/7/2024
 
 Se finalizo el primer formulario en este caso para editar, actualizar, agregar y eliminar usuarios. dejamos a medias el tema del diseño
+
+30/7/2024 //Noche
+
+Empezamos con un nuevo formulario en este caso el de compra y venta de los boletos, iniciamos con un diseño simple.
