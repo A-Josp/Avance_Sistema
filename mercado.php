@@ -4,7 +4,7 @@ session_start();
 if(!isset($_SESSION['users'])){
     echo '
     <script>
-        alert("Sesion no iniciada");
+        alert("Sesión no iniciada");
         window.location = "index.php";
     </script>';
     session_destroy();
@@ -17,7 +17,7 @@ if(!isset($_SESSION['users'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mercado</title>
+    <title>Compra de Boletos</title>
     <link rel="icon" href="assets/images/favicon-new.ico" type="image/x-icon">
     <style>
         body {
@@ -37,6 +37,39 @@ if(!isset($_SESSION['users'])){
         }
         main {
             padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 160px);
+        }
+        form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
         }
         footer {
             background-color: #333;
@@ -51,18 +84,31 @@ if(!isset($_SESSION['users'])){
 </head>
 <body>
     <header>
-        <h1>Partidos Disponibles</h1>
+        <h1>Mercado</h1>
+        <a href="menu.php" class="back-button">Regresar al Menú</a>
     </header>
     <main>
-        <h2>Introducción</h2>
-        <p>Esta es una página HTML de ejemplo. Puedes editar el contenido según tus necesidades.</p>
-        <h2>Sección 1</h2>
-        <p>Contenido de la primera sección.</p>
-        <h2>Sección 2</h2>
-        <p>Contenido de la segunda sección.</p>
+        <form action="procesar_compra.php" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" required>
+            
+            <label for="partido">Partido:</label>
+            <select name="partido" id="partido" required>
+                <option value="">Seleccione un partido</option>
+                <option value="equipoA_vs_equipoB">Equipo A vs Equipo B</option>
+                <option value="equipoC_vs_equipoD">Equipo C vs Equipo D</option>
+                <option value="equipoE_vs_equipoF">Equipo E vs Equipo F</option>
+            </select>
+            
+            <label for="cantidad">Cantidad de Boletos:</label>
+            <input type="number" name="cantidad" id="cantidad" min="1" max="10" required>
+            
+            <input type="submit" value="Comprar Boletos">
+        </form>
     </main>
     <footer>
-        <p>&copy; 2024 @Copyrigth todos los derechos reservados</p>
+        <p>&copy; 2024 Todos los derechos reservados</p>
     </footer>
 </body>
 </html>
+
