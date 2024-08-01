@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'conexion_io.php';
 
 if(!isset($_SESSION['users'])){
     echo '
@@ -8,8 +9,12 @@ if(!isset($_SESSION['users'])){
         window.location = "index.php";
     </script>';
     session_destroy();
-    die();  
+    die();
 }
+
+$usuario = $_SESSION['users'];
+$query = "SELECT * FROM ventas WHERE nombre = '$usuario'";
+$resultado = mysqli_query($conn, $query);
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +22,7 @@ if(!isset($_SESSION['users'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hisotial</title>
+    <title>Historial de Compras</title>
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
     <style>
         body {
@@ -44,22 +49,58 @@ if(!isset($_SESSION['users'])){
             width: 100%;
             bottom: 0;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 0.5rem;
+            text-align: left;
+        }
+        th {
+            background-color: #333;
+            color: white;
+        }
+        a.back-button {
+            color: white;
+            text-decoration: none;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Actividad Reciente</h1>
+        <h1>Historial de Compras</h1>
+        <a href="menu.php" class="back-button">Volver al Menú</a>
     </header>
     <main>
-        <h2>Introducción</h2>
-        <p>Esta es una página HTML de ejemplo. Puedes editar el contenido según tus necesidades.</p>
-        <h2>Sección 1</h2>
-        <p>Contenido de la primera sección.</p>
-        <h2>Sección 2</h2>
-        <p>Contenido de la segunda sección.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Partido</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php while($row = mysqli_fetch_assoc($resultado)) { ?>
+                <tr>
+                    <td><?php echo $row['partido']; ?></td>
+                    <td><?php echo $row['cantidad']; ?></td>
+                </tr>
+                <?php } ?>
+            </tbody>
+        </table>
     </main>
     <footer>
         <p>&copy; 2024 @Copyrigth todos los derechos reservados</p>
     </footer>
 </body>
 </html>
+
+<?php mysqli_close($conn); ?>
