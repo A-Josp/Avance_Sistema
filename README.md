@@ -33,3 +33,7 @@ Empezamos con un nuevo formulario en este caso el de compra y venta de los bolet
 31/7/2024
 
 Finalizamos el formulario de compra de boletos, creamos una nueva tabla en la base de datos donde se almacenara la informacion.
+
+1/8/2024
+
+comenzamos a desarrollar el formulario de historial donde se mostraran las compras hechas por los usuarios
