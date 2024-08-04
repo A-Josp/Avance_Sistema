@@ -36,4 +36,8 @@ Finalizamos el formulario de compra de boletos, creamos una nueva tabla en la ba
 
 1/8/2024
 
-comenzamos a desarrollar el formulario de historial donde se mostraran las compras hechas por los usuarios
+Comenzamos a desarrollar el formulario de historial donde se mostraran las compras hechas por los usuarios
+
+3/8/2024
+
+Creamos un nuevo formulario llamado agregar_partido.php donde el administrador podra agregar los partidos disponibles para el formulario de compras
