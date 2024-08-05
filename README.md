@@ -41,3 +41,7 @@ Comenzamos a desarrollar el formulario de historial donde se mostraran las compr
 3/8/2024
 
 Creamos un nuevo formulario llamado agregar_partido.php donde el administrador podra agregar los partidos disponibles para el formulario de compras
+
+5/8/2024
+
+Se finalizo el formulario de historial
