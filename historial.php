@@ -2,10 +2,11 @@
 session_start();
 include 'conexion_io.php';
 
-if(!isset($_SESSION['users'])){
+// Verificar si la sesión está iniciada
+if (!isset($_SESSION['users'])) {
     echo '
     <script>
-        alert("Sesion no iniciada");
+        alert("Sesión no iniciada");
         window.location = "index.php";
     </script>';
     session_destroy();
@@ -13,8 +14,15 @@ if(!isset($_SESSION['users'])){
 }
 
 $usuario = $_SESSION['users'];
+
+// Consulta para obtener el historial de compras del usuario
 $query = "SELECT * FROM ventas WHERE nombre = '$usuario'";
 $resultado = mysqli_query($conn, $query);
+
+if (!$resultado) {
+    echo 'Error en la consulta: ' . mysqli_error($conn);
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -36,6 +44,13 @@ $resultado = mysqli_query($conn, $query);
             color: white;
             padding: 1rem;
             text-align: center;
+            position: relative;
+        }
+        .user-name {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            color: white;
         }
         main {
             padding: 2rem;
@@ -70,7 +85,7 @@ $resultado = mysqli_query($conn, $query);
             text-decoration: none;
             position: absolute;
             top: 1rem;
-            right: 1rem;
+            left: 1rem;
         }
     </style>
 </head>
@@ -78,6 +93,7 @@ $resultado = mysqli_query($conn, $query);
     <header>
         <h1>Historial de Compras</h1>
         <a href="menu.php" class="back-button">Volver al Menú</a>
+        <div class="user-name"><?php echo htmlspecialchars($usuario); ?></div>
     </header>
     <main>
         <table>
@@ -88,19 +104,26 @@ $resultado = mysqli_query($conn, $query);
                 </tr>
             </thead>
             <tbody>
-                <?php while($row = mysqli_fetch_assoc($resultado)) { ?>
+                <?php if (mysqli_num_rows($resultado) > 0) { 
+                    while ($row = mysqli_fetch_assoc($resultado)) { ?>
                 <tr>
-                    <td><?php echo $row['partido']; ?></td>
-                    <td><?php echo $row['cantidad']; ?></td>
+                    <td><?php echo htmlspecialchars($row['partido']); ?></td>
+                    <td><?php echo htmlspecialchars($row['cantidad']); ?></td>
+                </tr>
+                <?php } 
+                } else { ?>
+                <tr>
+                    <td colspan="2">No hay compras registradas</td>
                 </tr>
                 <?php } ?>
             </tbody>
         </table>
     </main>
     <footer>
-        <p>&copy; 2024 @Copyrigth todos los derechos reservados</p>
+        <p>&copy; 2024 @Copyright todos los derechos reservados</p>
     </footer>
 </body>
 </html>
 
 <?php mysqli_close($conn); ?>
+
