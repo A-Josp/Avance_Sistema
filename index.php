@@ -58,7 +58,6 @@ header("location: ../menu.php ");
 
                 <!--Register-->
                 <form action="php/registro_user.php" method="POST" class="formulario__register">
-                    <h2> </h2>
                     <h2>Regístro</h2>
                     <input type="text" placeholder="Usuario" name="users">
                     <input type="password" placeholder="Contraseña" name="contrasenia">

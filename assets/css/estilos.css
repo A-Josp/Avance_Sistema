@@ -196,7 +196,7 @@ main {
     }
 }
 
-.intput{
+/*.intput{
 font-family: "Geist Mono",
 monospace;
 font-size: 1.75rem;
@@ -210,7 +210,7 @@ background:
 var(--intput-bg);
 outline: none;
 transition: border-color 0.25s, color 0.2s;
-}
+}*/
 
 .label{
 position: absolute;
