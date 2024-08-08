@@ -35,7 +35,10 @@ if(!isset($_SESSION['users'])){
                 <a href="php/agregar_partido.php">Agregar Partido</a>
                 <a href="php/mercado.php">Mercado</a>
                 <a href="php/historial.php">Historial</a>
+<<<<<<< HEAD
                 <a href="php/informes.php">Recibos</a>
+=======
+>>>>>>> d81edd3e436166960e4ade1721e2f72e37ae5528
                 <a href="php/logout.php">Cerrar Sesión</a>
             </div>
         </nav>
