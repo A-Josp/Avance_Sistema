@@ -45,3 +45,7 @@ Creamos un nuevo formulario llamado agregar_partido.php donde el administrador p
 5/8/2024
 
 Se finalizo el formulario de historial
+
+7/8/2024
+
+agregamos una factura creando un formulario llamado informes
