@@ -92,7 +92,6 @@ if (!$resultado) {
 <body>
     <header>
         <h1>Historial de Compras</h1>
-        <a href="menu.php" class="back-button">Volver al Menú</a>
         <div class="user-name"><?php echo htmlspecialchars($usuario); ?></div>
     </header>
     <main>

@@ -112,6 +112,7 @@ $result = mysqli_query($conn, "SELECT * FROM user");
 <body>
     <header>
         <h1>Usuarios Registrados</h1>
+        <a href="../menu.php" class="back-button">Regresar al Menú</a>
     </header>
     <main>
         <h2>Crear Usuario</h2>
